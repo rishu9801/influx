@@ -1,5 +1,4 @@
 import React from "react";
-import "./topmenu.scss";
 
 const TopMenu = () => {
   return (
