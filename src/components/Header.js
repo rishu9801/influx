@@ -17,11 +17,11 @@ const Header = () => {
           </p>
         </span>
       </div>
-      <div className="align-self-center">
+      <div className="align-self-center d-flex flex-nowrap">
         <button className="btn btn-dark mx-3" type="submit">
           <FontAwesomeIcon icon={faStar} />
         </button>
-        <button className="btn btn-success" type="submit">
+        <button className="btn btn-success text-white" type="submit">
           <FontAwesomeIcon icon={faPlus} className="me-2" />
           Create New
         </button>

@@ -9,7 +9,6 @@ import {
   faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import Header from "./components/Header";
-import "./dashboard.scss";
 const Dashboard = ({ taskItems, chats, btnDisabled }) => {
   return (
     <div className="container-fluid p-0 bg-light">
@@ -104,10 +103,10 @@ const Dashboard = ({ taskItems, chats, btnDisabled }) => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Write a message."
+                  placeholder="Write here and hit enter to send..."
                   aria-describedby="basic-addon2"
                 />
-                <button className="btn btn-success">Send</button>
+                <button className="btn btn-success text-white">Send</button>
               </div>
             </div>
           </div>
