@@ -1,13 +1,18 @@
+//Bootstrap Variable override
+
+$primary: #3f6ad8;
+$success: #39c37c;
+$primary-light: #00caf2;
+$danger: #e15274;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 //common styles
-$green: #198754;
-$red: #e15274;
-$light-blue: #00caf2;
-$blue: #3f6ad8;
 
 .text-btn {
   background-color: transparent;
   border: none;
-  color: $blue;
+  color: $primary;
 }
 .title {
   color: #4a4a4a;
@@ -81,28 +86,28 @@ p {
 
         .left {
           &[status] {
-            border-left: 3px solid orange;
+            border-left: 3px solid $orange;
           }
           &[status="latest"] {
-            border-left: 3px solid $green;
+            border-left: 3px solid $success;
           }
           &[status="planned"] {
-            border-left: 3px solid $light-blue;
+            border-left: 3px solid $primary-light;
           }
           &[status="rejected"] {
-            border-left: 3px solid $red;
+            border-left: 3px solid $danger;
           }
         }
         .right {
           .badge {
             &[status="latest"] {
-              background: $green;
+              background: $success;
             }
             &[status="planned"] {
-              background: $light-blue;
+              background: $primary-light;
             }
             &[status="rejected"] {
-              background: $red;
+              background: $danger;
             }
           }
         }
@@ -111,11 +116,11 @@ p {
   }
   .card-footer {
     .btn-primary {
-      background: $blue;
+      background: $primary;
       color: white;
     }
     .text-btn {
-      color: $blue;
+      color: $primary;
     }
   }
 }
