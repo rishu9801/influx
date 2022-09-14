@@ -4,10 +4,10 @@ import Dashboard from "./Dashboard";
 import { DragDropContext } from "react-beautiful-dnd";
 import tasks from "./data/tasks";
 import { useState } from "react";
-import chat from "./data/chat";
+
 function App() {
   const [taskItems, setTaskItems] = useState(tasks);
-  const [chats, setChats] = useState(chat);
+
   const [btnDisabled, setBtnDisabled] = useState(true);
 
   const onDragEnd = (results) => {
@@ -29,8 +29,6 @@ function App() {
       <div className="App">
         <Dashboard
           taskItems={taskItems}
-          chats={chats}
-          setChats={setChats}
           btnDisabled={btnDisabled}
           setBtnDisabled={setBtnDisabled}
         />

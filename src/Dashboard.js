@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ListItem from "./components/ListItem";
 import TopMenu from "./components/TopMenu";
 import { Droppable } from "react-beautiful-dnd";
@@ -8,8 +8,25 @@ import {
   faDatabase,
   faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import chat from "./data/chat";
 import Header from "./components/Header";
-const Dashboard = ({ taskItems, chats, btnDisabled }) => {
+const Dashboard = ({ taskItems, btnDisabled }) => {
+  const [chats, setChats] = useState(chat);
+  const [message, setMessage] = useState("");
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+    chat.push({
+      user: "jhon wick",
+      userImage: "/images/avatar-2.jpg",
+      message: message,
+      timeStamp: "10:21 am | Yesterday",
+    });
+    setChats(chat);
+    console.table(chat);
+    setMessage("");
+  };
+
   return (
     <div className="container-fluid p-0 bg-light">
       <TopMenu />
@@ -99,15 +116,26 @@ const Dashboard = ({ taskItems, chats, btnDisabled }) => {
               </div>
             </div>
             <div className="card-footer">
-              <div className="input-group input-group-sm">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Write here and hit enter to send..."
-                  aria-describedby="basic-addon2"
-                />
-                <button className="btn btn-success text-white">Send</button>
-              </div>
+              <form onSubmit={sendMessage}>
+                <div className="input-group input-group-sm">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Write here and hit enter to send..."
+                    aria-describedby="basic-addon2"
+                    value={message}
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                    }}
+                  />
+                  <button
+                    className="btn btn-success text-white"
+                    onClick={sendMessage}
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
